@@ -300,7 +300,7 @@ func GetSetSyncMap(m *sync.Map, finished chan struct{}) (set func(key, value str
 }
 
 func BenchmarkKeys(b *testing.B) {
-	count := 100000
+	count := 10000
 	shardCount := 32
 	m := New(count, shardCount)
 
@@ -315,7 +315,7 @@ func BenchmarkKeys(b *testing.B) {
 
 func BenchmarkKeysSyncMap(b *testing.B) {
 	var m sync.Map
-	count := 100000
+	count := 10000
 	keys := make([]string, 0)
 
 	// Insert 10000 elements.
